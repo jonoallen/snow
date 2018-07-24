@@ -1,7 +1,10 @@
 # Version: 1.1
-function Start-Demo
-{
-  param($file=".\demo.txt", [int]$command=0)
+param(
+    $file=".\demo.txt",
+    [int]$command=0,
+    $_PretendTyping = $true,
+    $_InterkeyPause = 100
+)
   $CommentColor = "Yellow"
   $MetaCommandColor = "Red"
   Clear-Host
@@ -9,8 +12,7 @@ function Start-Demo
   $_Random = New-Object System.Random
   $_lines = @(Get-Content $file)
   $_starttime = [DateTime]::now
-  $_PretendTyping = $true    
-  $_InterkeyPause = 200
+  
   Write-Host -for $CommentColor @"
 NOTE: Start-Demo replaces the typing but runs the actual commands.
 .
@@ -207,5 +209,3 @@ NOTE 3: The line to be run is displayed in the Window Title BEFORE it is typed.
   $_Duration = [DateTime]::Now - $_StartTime
   Write-Host -ForeGroundColor $CommentColor $("<Demo Complete {0} Minutes and {1} Seconds>" -f [int]$_Duration.TotalMinutes, [int]$_Duration.Seconds)
   Write-Host -ForeGroundColor $CommentColor $([DateTime]::now)
-} # function
-
