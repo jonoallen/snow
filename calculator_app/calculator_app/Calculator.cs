@@ -21,7 +21,7 @@ namespace calculator_app
 
             foreach(var number in numbers.Skip(1))
             {
-                answer = answer + number;
+                answer = answer - number;
             }
 
             return answer;
