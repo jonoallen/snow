@@ -15,7 +15,7 @@ namespace calculator_app
             numbers.Add(number);
         }
 
-        public static int Calculate()
+        public static int Add()
         {
             var answer = numbers.First();
 
@@ -23,6 +23,22 @@ namespace calculator_app
             {
                 answer = answer + number;
             }
+
+            numbers.Clear();
+
+            return answer;
+        }
+
+        internal static int Subtract()
+        {
+            var answer = numbers.First();
+
+            foreach (var number in numbers.Skip(1))
+            {
+                answer = answer - number;
+            }
+
+            numbers.Clear();
 
             return answer;
         }

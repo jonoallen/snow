@@ -16,7 +16,7 @@ namespace calculator_app
             var number2 = getNumberFromUser("Please enter the second number");
             Calculator.EnterNumber(number2);
 
-            var answer = Calculator.Calculate();
+            var answer = Calculator.Add();
             Console.WriteLine($"The answer is {answer}");
                         
             Console.ReadLine();

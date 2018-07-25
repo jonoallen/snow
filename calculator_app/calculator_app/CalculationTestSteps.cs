@@ -21,8 +21,15 @@ namespace calculator_app
         [When("I press add")]
         public void WhenIPressAdd()
         {
-            actualResult = Calculator.Calculate();            
+            actualResult = Calculator.Add();            
         }
+
+        [When(@"I press subtract")]
+        public void WhenIPressSubtract()
+        {
+            actualResult = Calculator.Subtract();
+        }
+
 
         [Then("the result should be (.*) on the screen")]
         public void ThenTheResultShouldBe(int expectedResult)
