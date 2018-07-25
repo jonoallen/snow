@@ -17,9 +17,9 @@ namespace calculator_app
 
         public static int Calculate()
         {
-            var answer = 0;
+            var answer = numbers.First();
 
-            foreach(var number in numbers)
+            foreach(var number in numbers.Skip(1))
             {
                 answer = answer + number;
             }
